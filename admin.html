@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistem Dashboard Admin - Slot Demo Kontrol</title>
+    <style>
+        body { font-family: sans-serif; background: #222; color: #fff; padding: 40px; }
+        .card { background: #333; padding: 20px; border-radius: 8px; max-width: 400px; border: 1px solid #ffd700; }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
+        button { background: #ffd700; color: #000; font-weight: bold; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Sistem Manajemen Panel Admin (Versi Demo)</h2>
+    <div class="card">
+        <h3>Kontrol Simulator Sistem</h3>
+        <label>Suntik / Atur Saldo Pemain:</label>
+        <input type="number" id="admBalance" value="100000">
+        
+        <label>Atur Persentase Kemenangan (RTP Hack Demo):</label>
+        <select id="admRtp">
+            <option value="99">Sangat Gacor (99%)</option>
+            <option value="90">Normal Terkontrol (90%)</option>
+            <option value="30">Setelan Rungkad (30%)</option>
+        </select>
+        
+        <button onclick="simpanPengaturan()">Terapkan Perubahan Sistem</button>
+    </div>
+
+    <script>
+        // Load data bawaan saat ini
+        document.getElementById('admBalance').value = localStorage.getItem('demo_balance') || 100000;
+        document.getElementById('admRtp').value = localStorage.getItem('admin_rtp') || 96;
+
+        function simpanPengaturan() {
+            const saldoBaru = document.getElementById('admBalance').value;
+            const rtpBaru = document.getElementById('admRtp').value;
+            
+            localStorage.setItem('demo_balance', parseFloat(saldoBaru).toFixed(2));
+            localStorage.setItem('admin_rtp', rtpBaru);
+            
+            alert("Sistem berhasil diperbarui! Silakan refresh halaman game utama.");
+        }
+    </script>
+</body>
+</html>
