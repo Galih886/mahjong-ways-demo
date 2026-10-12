@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahjong Ways 2 - Demo Slot Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Top Bar Multiplier -->
+        <div class="multiplier-bar">
+            <span id="m1" class="active">x1</span>
+            <span id="m2">x2</span>
+            <span id="m3">x3</span>
+            <span id="m5">x5</span>
+        </div>
+
+        <!-- Canvas Area Game -->
+        <canvas id="gameCanvas" width="400" height="450"></canvas>
+
+        <!-- Bottom Bar Info (Sesuai Gambar User) -->
+        <div class="info-bar">
+            <div class="info-box">
+                <span class="label">SALDO MOCK</span>
+                <span id="balanceDisplay">100,000.00</span>
+            </div>
+            <div class="info-box">
+                <span class="label">TARUHAN</span>
+                <span id="betDisplay">12.00</span>
+            </div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button id="btnMinus" class="btn-circle">-</button>
+            <button id="btnSpin" class="btn-spin">⚡</button>
+            <button id="btnPlus" class="btn-circle">+</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
